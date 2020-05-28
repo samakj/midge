@@ -19,17 +19,20 @@ class MidgeMqttClient(MQTTClient):
         client_id: str,
         host: str,
         port: int,
-        username: str,
-        password: str,
-        ca_cert: str,
-        client_cert: str,
-        client_key: str,
+        username: Optional[str] = None,
+        password: Optional[str] = None,
+        ca_cert: Optional[str] = None,
+        client_cert: Optional[str] = None,
+        client_key: Optional[str] = None,
         user_data: Optional[Dict[str, Any]] = None,
     ):
         super(MidgeMqttClient, self).__init__(client_id=client_id, userdata=user_data)
-        self.tls_set(ca_certs=ca_cert, certfile=client_cert, keyfile=client_key)
-        self.tls_insecure_set(True)
-        self.username_pw_set(username=username, password=password)
+
+        if ca_cert is not None or client_cert is not None or client_key is not None:
+            self.tls_set(ca_certs=ca_cert, certfile=client_cert, keyfile=client_key)
+            self.tls_insecure_set(True)
+        if username is not None:
+            self.username_pw_set(username=username, password=password)
 
         self.user_data = user_data
         self.message_handler = MessageHandler(client=self)
