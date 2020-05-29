@@ -8,6 +8,7 @@ setup(
     author="Sam Jones",
     author_email="samakj@live.co.uk",
     license="MIT",
+    package_dir={"": "./src"},
     packages=["midge"],
     install_requires=["paho-mqtt"],
     zip_safe=False
