@@ -1,4 +1,4 @@
-from models.response_code import ResponseCode
+from .models.response_code import ResponseCode
 
 ConnectionStatesMap = {
     0: ResponseCode(code=0, message="NEW"),

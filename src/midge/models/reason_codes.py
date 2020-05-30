@@ -1,4 +1,4 @@
-from models.response_code import ResponseCode
+from .models.response_code import ResponseCode
 
 ReasonCodesMap = {
     0: ResponseCode(
