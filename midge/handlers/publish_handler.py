@@ -3,7 +3,7 @@ import logging
 from typing import Any, Callable, Dict, List, Optional, Union
 
 from paho.mqtt.client import Client as MQTTClient
-from .models.message_info import MidgeMqttMessageInfo
+from midge.models.message_info import MidgeMqttMessageInfo
 
 LOG = logging.getLogger(__name__)
 

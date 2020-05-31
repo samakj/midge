@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 
 from paho.mqtt.client import MQTTMessage
-from .topics.topic_blueprint import TopicBlueprint
+from midge.topics.topic_blueprint import TopicBlueprint
 
 LOG = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(message)s")

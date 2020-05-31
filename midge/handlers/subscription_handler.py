@@ -2,8 +2,8 @@ import logging
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from paho.mqtt.client import Client as MQTTClient
-from .models.response_code import ResponseCode
-from .models.error_codes import ErrorCodesMaps
+from midge.models.response_code import ResponseCode
+from midge.models.error_codes import ErrorCodesMaps
 
 LOG = logging.getLogger(__name__)
 

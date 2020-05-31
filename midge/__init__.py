@@ -2,13 +2,13 @@ import logging
 from typing import Any, Callable, Dict, Optional, Union
 
 from paho.mqtt.client import Client as MQTTClient
-from .models.message_info import MidgeMqttMessageInfo
-from .handlers.connection_handler import ConnectionHandler
-from .handlers.message_handler import MessageHandler
-from .handlers.publish_handler import PublishHandler
-from .handlers.subscription_handler import SubscriptionHandler
-from .topics.topic_blueprint import TopicBlueprint
-from .topics.default_topics import DEFAULT_TOPIC_BLUEPRINT
+from midge.models.message_info import MidgeMqttMessageInfo
+from midge.handlers.connection_handler import ConnectionHandler
+from midge.handlers.message_handler import MessageHandler
+from midge.handlers.publish_handler import PublishHandler
+from midge.handlers.subscription_handler import SubscriptionHandler
+from midge.topics.topic_blueprint import TopicBlueprint
+from midge.topics.default_topics import DEFAULT_TOPIC_BLUEPRINT
 
 LOG = logging.getLogger(__name__)
 

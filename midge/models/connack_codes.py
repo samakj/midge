@@ -1,4 +1,4 @@
-from .models.response_code import ResponseCode
+from midge.models.response_code import ResponseCode
 
 
 ConnackCodesMap = {
