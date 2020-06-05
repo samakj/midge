@@ -48,7 +48,7 @@ class MessageHandler:
             del self._topic_handler_map[topic][handler_id]
 
     def handle_message(
-        self, _: MQTTClient, message: MQTTMessage, userdata: Optional[Dict[str, Any]] = None,
+        self, _: MQTTClient, userdata: Optional[Dict[str, Any]], message: MQTTMessage,
     ) -> None:
         for handler in self.get_topic_message_handlers(topic=message.topic):
             try:

@@ -69,7 +69,7 @@ class PublishHandler:
         return message_info
 
     def handle_publish(
-        self, _: MQTTClient, mid: int, userdata: Optional[Dict[str, Any]] = None,
+        self, _: MQTTClient, userdata: Optional[Dict[str, Any]], mid: int,
     ) -> None:
         topic = self._mid_topic_map.get(mid, None)
 

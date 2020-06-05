@@ -42,9 +42,9 @@ class ConnectionHandler:
     def handle_connect(
         self,
         _: MQTTClient,
+        userdata: Optional[Dict[str, Any]],
         flags: Dict[str, Any],
         rc: int,
-        userdata: Optional[Dict[str, Any]] = None,
         properties: Dict[str, Any] = None,
     ) -> None:
         for handler in self.get_connect_handlers():
@@ -84,8 +84,8 @@ class ConnectionHandler:
     def handle_disconnect(
         self,
         _: MQTTClient,
+        userdata: Optional[Dict[str, Any]],
         rc: int,
-        userdata: Optional[Dict[str, Any]] = None,
         properties: Dict[str, Any] = None,
     ) -> None:
         for handler in self.get_disconnect_handlers():

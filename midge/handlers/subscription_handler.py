@@ -92,9 +92,9 @@ class SubscriptionHandler:
     def handle_subscribe(
         self,
         _: MQTTClient,
+        userdata: Optional[Dict[str, Any]],
         mid: int,
         granted_qos: bool,
-        userdata: Optional[Dict[str, Any]] = None,
         properties: Optional[Dict[str, Any]] = None,
     ) -> None:
         topic = self._mid_topic_map.get(mid, None)
@@ -173,7 +173,7 @@ class SubscriptionHandler:
             del self._topic_unsubscribe_handler_map[topic][handler_id]
 
     def handle_unsubscribe(
-        self, _: MQTTClient, mid: int, userdata: Optional[Dict[str, Any]] = None,
+        self, _: MQTTClient, userdata: Optional[Dict[str, Any]], mid: int,
     ) -> None:
         topic = self._mid_topic_map.get(mid, None)
 
